@@ -34,5 +34,5 @@ public class TripController {
         Optional<Trip> trip = tripRepository.findById(id);
         return trip.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
-    //adadasds
+
 }
