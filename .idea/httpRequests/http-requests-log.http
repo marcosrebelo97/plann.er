@@ -1,0 +1,86 @@
+POST http://localhost:8080/trips
+Content-Type: application/json
+Content-Length: 126
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "destination": "",
+  "starts_at": "",
+  "ends_at": "",
+  "emails_to_invite": [],
+  "owner_email": "",
+  "owner_name": ""
+}
+
+<> 2024-07-08T214228.500.json
+
+###
+
+POST http://localhost:8080/trips
+Content-Type: application/json
+Content-Length: 240
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "destination": "Manaus, AM",
+  "starts_at": "2024-06-25T21:51:54.743Z",
+  "ends_at": "2024-06-25T21:51:54.743Z",
+  "emails_to_invite": [
+    "rita@gmail.com"
+  ],
+  "owner_email": "Marcos Guerreiro",
+  "owner_name": "marcos@gmail.com"
+}
+
+<> 2024-07-08T214150.200.json
+
+###
+
+POST http://localhost:8080/trips
+Content-Type: application/json
+Content-Length: 240
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "destination": "Manaus, AM",
+  "starts_at": "2024-06-25T21:51:54.743Z",
+  "ends_at": "2024-06-25T21:51:54.743Z",
+  "emails_to_invite": [
+    "rita@gmail.com"
+  ],
+  "owner_email": "Marcos Guerreiro",
+  "owner_name": "marcos@gmail.com"
+}
+
+<> 2024-07-08T214110.200.json
+
+###
+
+POST http://localhost:8080/trips
+Content-Type: application/json
+Content-Length: 240
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "destination": "Manaus, AM",
+  "starts_at": "2024-06-25T21:51:54.743Z",
+  "ends_at": "2024-06-25T21:51:54.743Z",
+  "emails_to_invite": [
+    "rita@gmail.com"
+  ],
+  "owner_email": "Marcos Guerreiro",
+  "owner_name": "marcos@gmail.com"
+}
+
+<> 2024-07-08T213330.200.txt
+
+###
+
