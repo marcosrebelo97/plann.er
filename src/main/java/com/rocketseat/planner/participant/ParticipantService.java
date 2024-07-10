@@ -1,5 +1,6 @@
 package com.rocketseat.planner.participant;
 
+import com.rocketseat.planner.trip.Trip;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +10,25 @@ import java.util.UUID;
 @Service
 public class ParticipantService {
 
-    public void registerParticipantsToEvent(List<String> participantsToInvite, UUID id){}
+    @Autowired
+    private ParticipantRepository repository;
+
+    public void registerParticipantsToEvent(List<String> participantsToInvite, Trip trip){
+        List<Participant> participants = participantsToInvite.stream().map(email -> new Participant(email, trip)).toList();
+
+        this.repository.saveAll(participants);
+
+        System.out.println(participants.get(0).getId());
+    }
+
+    public ParticipantCreateResponse registerParticipantToEvent(String email, Trip trip){
+        Participant participant = new Participant(email, trip);
+        this.repository.save(participant);
+
+        return new ParticipantCreateResponse(participant.getId());
+    }
+
     public void triggerConfirmationToParticipants(UUID tripId){}
+
+    public void triggerConfirmationEmailToParticipant(String email){}
 }
