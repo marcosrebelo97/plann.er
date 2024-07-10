@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc4b1d3d-8b51-4d9f-b68b-fd7f4a446192" name="Changes" comment="1ª aula - Config BD, Criação de Migration, Entidade Trip, Repository, Endpoint de Cadastro e Consulta de Viagem">
+    <list default="true" id="dc4b1d3d-8b51-4d9f-b68b-fd7f4a446192" name="Changes" comment="Commit teste para verificar email vinculado">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rocketseat/planner/trip/TripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rocketseat/planner/trip/TripController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,8 +58,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "HTTP Request.Criação de Viagem.executor": "Run",
+    "HTTP Request.generated-requests | #1.executor": "Run",
+    "HTTP Request.generated-requests | #2.executor": "Run",
     "HTTP Request.generated-requests | #4.executor": "Run",
+    "HTTP Request.generated-requests | #5.executor": "Run",
     "HTTP Request.planner-endpoints | #1.executor": "Run",
+    "HTTP Request.planner-endpoints_2 | #1.executor": "Run",
     "Notification.DisplayName-DoNotAsk-Vcs Notifications": "VCS notifications",
     "Notification.DoNotAsk-Vcs Notifications": "true",
     "RequestMappingsPanelOrder0": "0",
@@ -83,7 +90,19 @@
     ]
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.PlannerApplication">
+    <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="5" requestIdentifier="#5" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="planner-endpoints_2 | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/planner-endpoints_2.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="PlannerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="planner" />
@@ -92,6 +111,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests | #1" />
+        <item itemvalue="HTTP Request.generated-requests | #2" />
+        <item itemvalue="HTTP Request.generated-requests | #5" />
+        <item itemvalue="HTTP Request.planner-endpoints_2 | #1" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -111,6 +138,7 @@
       <updated>1720483030375</updated>
       <workItem from="1720483031669" duration="8009000" />
       <workItem from="1720492641363" duration="695000" />
+      <workItem from="1720571926798" duration="1060000" />
     </task>
     <task id="LOCAL-00001" summary="1ª aula - Config BD, Criação de Migration, Entidade Trip, Repository, Endpoint de Cadastro e Consulta de Viagem">
       <option name="closed" value="true" />
@@ -136,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720496168728</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Commit teste para verificar email vinculado">
+      <option name="closed" value="true" />
+      <created>1720496417722</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1720496417722</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +211,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1ª aula - Config BD, Criação de Migration, Entidade Trip, Repository, Endpoint de Cadastro e Consulta de Viagem" />
-    <option name="LAST_COMMIT_MESSAGE" value="1ª aula - Config BD, Criação de Migration, Entidade Trip, Repository, Endpoint de Cadastro e Consulta de Viagem" />
+    <MESSAGE value="Commit teste para verificar email vinculado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit teste para verificar email vinculado" />
   </component>
 </project>

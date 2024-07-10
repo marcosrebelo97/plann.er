@@ -1,3 +1,113 @@
+GET http://localhost:8080/trips/38537933-28a5-44ba-8420-91e94a1f7c28
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-07-09T205554.200.json
+
+###
+
+PUT http://localhost:8080/trips/38537933-28a5-44ba-8420-91e94a1f7c28
+Content-Type: application/json
+Content-Length: 117
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "destination": "Manaus, AM",
+  "starts_at": "2024-06-25T21:51:54.7342",
+  "ends_at": "2024-06-25T21:51:54.7342"
+}
+
+<> 2024-07-09T205532.200.json
+
+###
+
+GET http://localhost:8080/trips/38537933-28a5-44ba-8420-91e94a1f7c28
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-07-09T205513.200.json
+
+###
+
+PUT http://localhost:8080/trips/38537933-28a5-44ba-8420-91e94a1f7c28
+Content-Type: application/json
+Content-Length: 114
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "destination": "Manaus",
+  "starts_at": "2024-06-25T21:51:54.7342",
+  "ends_at": "2024-06-25T21:51:54.7342",
+}
+
+<> 2024-07-09T205429.400.json
+
+###
+
+GET http://localhost:8080/trips/38537933-28a5-44ba-8420-91e94a1f7c28
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-07-09T205336.200.json
+
+###
+
+GET http://localhost:8080/trips/38537933-28a5-44ba-8420-91e94a1f7c28
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-07-09T205115.200.json
+
+###
+
+POST http://localhost:8080/trips
+Content-Type: application/json
+Content-Length: 264
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "destination": "Florianópolis, SC",
+  "starts_at": "2024-06-25T21:51:54.7342",
+  "ends_at": "2024-06-25T21:51:54.7342",
+  "emails_to_invite": ["mayk.brito@rocketseat.com"],
+  "owner_name": "Fernanda Kipper",
+  "owner_email": "fernanda.kipper@rocketseat.com"
+}
+
+<> 2024-07-09T205035.200.json
+
+###
+
+POST http://localhost:8080/trips
+Content-Type: application/json
+Content-Length: 126
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "destination": "",
+  "starts_at": "",
+  "ends_at": "",
+  "emails_to_invite": [],
+  "owner_email": "",
+  "owner_name": ""
+}
+
+<> 2024-07-09T204934.500.json
+
+###
+
 POST http://localhost:8080/trips
 Content-Type: application/json
 Content-Length: 126
