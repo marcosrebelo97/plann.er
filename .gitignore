@@ -1,4 +1,9 @@
-<<<<<<< HEAD
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
 # Compiled class file
 *.class
 
@@ -24,27 +29,12 @@
 hs_err_pid*
 replay_pid*
 =======
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
 
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
-HELP.md
 
 ### NetBeans ###
 /nbproject/private/
@@ -58,4 +48,3 @@ build/
 
 ### VS Code ###
 .vscode/
->>>>>>> a0cb102 (1ª aula - Config BD, Criação de Migration, Entidade Trip, Repository, Endpoint de Cadastro e Consulta de Viagem)
