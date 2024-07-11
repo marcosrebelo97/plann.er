@@ -1,13 +1,11 @@
-package com.rocketseat.planner.trip;
+package com.rocketseat.planner.controller;
 
-import com.rocketseat.planner.activity.ActivityData;
-import com.rocketseat.planner.activity.ActivityRequestPayload;
-import com.rocketseat.planner.activity.ActivityResponse;
-import com.rocketseat.planner.activity.ActivityService;
-import com.rocketseat.planner.link.LinkRequestPayload;
-import com.rocketseat.planner.link.LinkResponse;
-import com.rocketseat.planner.link.LinkService;
-import com.rocketseat.planner.participant.*;
+import com.rocketseat.planner.dto.*;
+import com.rocketseat.planner.service.ActivityService;
+import com.rocketseat.planner.service.LinkService;
+import com.rocketseat.planner.model.Trip;
+import com.rocketseat.planner.repository.TripRepository;
+import com.rocketseat.planner.service.ParticipantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

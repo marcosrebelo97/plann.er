@@ -1,5 +1,6 @@
-package com.rocketseat.planner.trip;
+package com.rocketseat.planner.model;
 
+import com.rocketseat.planner.dto.TripRequestPayload;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

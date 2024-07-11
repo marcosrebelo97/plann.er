@@ -1,5 +1,6 @@
-package com.rocketseat.planner.participant;
+package com.rocketseat.planner.repository;
 
+import com.rocketseat.planner.model.Participant;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

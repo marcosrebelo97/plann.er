@@ -1,8 +1,11 @@
-package com.rocketseat.planner.link;
+package com.rocketseat.planner.service;
 
-import com.rocketseat.planner.activity.ActivityData;
-import com.rocketseat.planner.trip.LinkData;
-import com.rocketseat.planner.trip.Trip;
+import com.rocketseat.planner.dto.LinkRequestPayload;
+import com.rocketseat.planner.dto.LinkResponse;
+import com.rocketseat.planner.model.Link;
+import com.rocketseat.planner.repository.LinkRepository;
+import com.rocketseat.planner.dto.LinkData;
+import com.rocketseat.planner.model.Trip;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

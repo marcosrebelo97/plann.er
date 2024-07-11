@@ -1,4 +1,4 @@
-package com.rocketseat.planner.activity;
+package com.rocketseat.planner.dto;
 
 import java.util.UUID;
 

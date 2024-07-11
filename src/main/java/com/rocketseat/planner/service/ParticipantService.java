@@ -1,6 +1,10 @@
-package com.rocketseat.planner.participant;
+package com.rocketseat.planner.service;
 
-import com.rocketseat.planner.trip.Trip;
+import com.rocketseat.planner.model.Participant;
+import com.rocketseat.planner.model.Trip;
+import com.rocketseat.planner.dto.ParticipantCreateResponse;
+import com.rocketseat.planner.dto.ParticipantData;
+import com.rocketseat.planner.repository.ParticipantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
