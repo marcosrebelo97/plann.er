@@ -18,10 +18,9 @@ public class LinkService {
     @Autowired
     private LinkRepository repository;
 
-    public LinkResponse registerLink(LinkRequestPayload payload, Trip trip){
-        Link newLink = new Link(payload.title(), payload.url(), trip);
-
-        this.repository.save(newLink);
+    public LinkResponse registerLink(LinkRequestPayload payload, Trip trip) {
+        Link newLink = new Link(payload, trip);
+        repository.saveAndFlush(newLink);
 
         return new LinkResponse(newLink.getId());
     }

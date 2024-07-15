@@ -23,6 +23,8 @@ public class TripService {
     ParticipantService participantService;
     @Autowired
     ActivityService activityService;
+    @Autowired
+    LinkService linkService;
 
     public TripResponse getTripDetails (UUID tripId) {
         return this.tripRepository.findById(tripId)
@@ -81,6 +83,35 @@ public class TripService {
         Trip trip = this.tripRepository.findById(tripId).orElseThrow();
         return this.activityService.getAllActivitiesFromId(trip.getId());
     }
+
+    public ParticipantCreateResponse inviteParticipant (UUID tripId, ParticipantRequestPayload participantRequestPayload) {
+        Trip trip = this.tripRepository.findById(tripId).orElseThrow();
+
+        ParticipantCreateResponse participantCreateResponse =
+                this.participantService.registerParticipantToTrip(participantRequestPayload.email(), trip);
+
+        if (Boolean.TRUE.equals(trip.getIsConfirmed())) {
+            this.participantService.triggerConfirmationEmailToParticipant(trip.getId(), participantRequestPayload.email());
+        }
+
+        return participantCreateResponse;
+    }
+
+    public List<ParticipantData> getAllParticipantsTrip (UUID tripId) {
+        Trip trip = this.tripRepository.findById(tripId).orElseThrow();
+        return this.participantService.getAllParticipantsFromTrip(trip.getId());
+    }
+
+    public LinkResponse saveLink (UUID tripId, LinkRequestPayload payload) {
+        Trip trip = this.tripRepository.findById(tripId).orElseThrow();
+        return this.linkService.registerLink(payload, trip);
+    }
+
+    public List<LinkData> getAllLinksTrip(UUID tripId) {
+        Trip trip = this.tripRepository.findById(tripId).orElseThrow();
+        return this.linkService.getAllLinksFromTrip(trip.getId());
+    }
+
     private TripResponse to (Trip trip) {
         return new TripResponse(trip.getId(), trip.getDestination(),
                 trip.getStartsAt().format(DateTimeFormatter.ISO_DATE_TIME),

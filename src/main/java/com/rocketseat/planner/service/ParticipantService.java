@@ -32,11 +32,27 @@ public class ParticipantService {
         return new ParticipantCreateResponse(participant.getId());
     }
 
+    public ParticipantCreateResponse registerParticipantToTrip(String email, Trip trip) {
+        Participant participant = new Participant(email, trip);
+        this.repository.saveAndFlush(participant);
+        return new ParticipantCreateResponse(participant.getId());
+    }
+
     public void triggerConfirmationToParticipants(UUID tripId){}
 
-    public void triggerConfirmationEmailToParticipant(String email){}
+    public void triggerConfirmationEmailToParticipant(UUID tripId, String email){}
 
     public List<ParticipantData> getAllParticipantsFromEvent(UUID tripId) {
         return this.repository.findByTripId(tripId).stream().map(participant -> new ParticipantData(participant.getId(), participant.getName(), participant.getEmail(), participant.getIsConfirmed())).toList();
+    }
+
+    public List<ParticipantData> getAllParticipantsFromTrip(UUID id) {
+        return repository.findParticipantsByTripId(id)
+                .stream()
+                .map(participant -> new ParticipantData(participant.getId(),
+                        participant.getName(),
+                        participant.getEmail(),
+                        participant.getIsConfirmed()))
+                .toList();
     }
 }

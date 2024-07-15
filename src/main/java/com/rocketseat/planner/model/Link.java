@@ -1,5 +1,6 @@
 package com.rocketseat.planner.model;
 
+import com.rocketseat.planner.dto.LinkRequestPayload;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -34,5 +35,11 @@ public class Link {
         this.title = title;
         this.url = url;
         this.trip = trip;
+    }
+
+    public Link(LinkRequestPayload data, Trip trip) {
+        this.trip = trip;
+        this.title = data.title();
+        this.url = data.url();
     }
 }
