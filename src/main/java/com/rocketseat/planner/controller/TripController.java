@@ -68,21 +68,14 @@ public class TripController {
     //Activities
 
     @PostMapping("/{id}/activities")
-    public ResponseEntity<ActivityResponse> registerActivity(@PathVariable UUID id, @RequestBody ActivityRequestPayload payload){
-        Optional<Trip> trip = tripRepository.findById(id);
-
-        if(trip.isPresent()){
-            Trip rawTrip = trip.get();
-            ActivityResponse activityResponse = this.activityService.registerActivity(payload, rawTrip);
-
-            return ResponseEntity.ok(activityResponse);
-        }
-        return ResponseEntity.notFound().build();
+    public ResponseEntity<ActivityResponse> registerActivity(@PathVariable UUID id, @RequestBody ActivityRequestPayload payload) throws ErroDateException{
+        ActivityResponse activityResponse = this.tripService.saveActivity(id, payload);
+        return ResponseEntity.ok(activityResponse);
     }
 
     @GetMapping("/{id}/activities")
     public ResponseEntity<List<ActivityData>> getAllActivities(@PathVariable UUID id){
-        List<ActivityData> activityDataList = this.activityService.getAllActivitiesFromId(id);
+        List<ActivityData> activityDataList = this.tripService.getAllActivitiesTrip(id);
 
         return ResponseEntity.ok(activityDataList);
     }
