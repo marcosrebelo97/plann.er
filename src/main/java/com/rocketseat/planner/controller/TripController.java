@@ -1,11 +1,13 @@
 package com.rocketseat.planner.controller;
 
 import com.rocketseat.planner.dto.*;
+import com.rocketseat.planner.exception.ErroDateException;
 import com.rocketseat.planner.service.ActivityService;
 import com.rocketseat.planner.service.LinkService;
 import com.rocketseat.planner.model.Trip;
 import com.rocketseat.planner.repository.TripRepository;
 import com.rocketseat.planner.service.ParticipantService;
+import com.rocketseat.planner.service.TripService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,64 +23,46 @@ import java.util.UUID;
 public class TripController {
 
     @Autowired
-    ParticipantService participantService;
+    private ParticipantService participantService;
     @Autowired
-    TripRepository tripRepository;
+    private TripRepository tripRepository;
     @Autowired
-    ActivityService activityService;
+    private ActivityService activityService;
     @Autowired
-    LinkService linkService;
+    private LinkService linkService;
+    @Autowired
+    private TripService tripService;
 
     //Trips
 
     @PostMapping
-    public ResponseEntity<TripCreateResponse> createTrip(@RequestBody TripRequestPayload payload){
-        Trip newTrip = new Trip(payload);
-
-        this.tripRepository.save(newTrip);
-
-        this.participantService.registerParticipantsToEvent(payload.emails_to_invite(), newTrip);
-
-        return ResponseEntity.ok(new TripCreateResponse(newTrip.getId()));
+    public ResponseEntity<TripCreateResponse> createTrip(@RequestBody TripRequestPayload payload) throws ErroDateException {
+        TripCreateResponse newTrip = this.tripService.createTrip(payload);
+        return ResponseEntity.ok(newTrip);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Trip> getTripDetails(@PathVariable UUID id){
-        Optional<Trip> trip = tripRepository.findById(id);
-        return trip.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    public ResponseEntity<TripResponse> getTripDetails(@PathVariable UUID id){
+        try {
+            TripResponse response = tripService.getTripDetails(id);
+            return ResponseEntity.ok(response);
+        } catch (Exception ex) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Trip> updateTrip(@PathVariable UUID id, @RequestBody TripRequestPayload payload){
-        Optional<Trip> trip = tripRepository.findById(id);
-
-        if(trip.isPresent()){
-            Trip rawTrip = trip.get();
-            rawTrip.setEndsAt(LocalDateTime.parse(payload.ends_at(), DateTimeFormatter.ISO_DATE_TIME));
-            rawTrip.setStartsAt(LocalDateTime.parse(payload.starts_at(), DateTimeFormatter.ISO_DATE_TIME));
-            rawTrip.setDestination(payload.destination());
-
-            this.tripRepository.save(rawTrip);
-
-            return ResponseEntity.ok(rawTrip);
-        }
-        return ResponseEntity.notFound().build();
+    public ResponseEntity<TripResponse> updateTrip(@PathVariable UUID id, @RequestBody TripRequestPayload payload) throws ErroDateException {
+        TripResponse tripResponse = tripService.updateTrip(id, payload);
+        return ResponseEntity.ok(tripResponse);
     }
 
     @GetMapping("/{id}/confirm")
-    public ResponseEntity<Trip> isConfirm(@PathVariable UUID id){
-        Optional<Trip> trip = tripRepository.findById(id);
-
-        if(trip.isPresent()){
-            Trip rawTrip = trip.get();
-            rawTrip.setIsConfirmed(true);
-
-            this.tripRepository.save(rawTrip);
-            this.participantService.triggerConfirmationToParticipants(id);
-
-            return ResponseEntity.ok(rawTrip);
-        }
-        return ResponseEntity.notFound().build();
+    public ResponseEntity<TripResponse> isConfirm(@PathVariable UUID id){
+        try {
+            TripResponse tripResponse = tripService.confirmTrip(id);
+            return ResponseEntity.ok(tripResponse);
+        } catch (Exception ex) {return ResponseEntity.notFound().build();}
     }
 
     //Activities
